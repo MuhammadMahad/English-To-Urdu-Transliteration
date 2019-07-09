@@ -1,5 +1,7 @@
 <script type="text/javascript">
 
+
+
 var dict = {
   'q': 'ق',
   'w':'و',
@@ -21,7 +23,7 @@ var dict = {
   'h': 'ح',
   'j': 'ج',
   'k': 'ک',
-  'i': 'ل',
+  'l': 'ل',
   ';': '؛',
   'z': 'ز',
   'x': 'ش',
@@ -33,12 +35,27 @@ var dict = {
   ',': '،',
   '.': '۔',
   '/': '/',
+
+  '1': '۱',
+  '2': '۲',
+  '3': '۳',
+  '4': '۴',
+  '5': '۵',
+  '6': '٦',
+  '7': '۷',
+  '8': '۸',
+  '9': '۹',
+  '0': '۰',
+  '-': '-',
   
 };
 
+function replaceAt(str, index, replacement) {
+    return str.substr(0, index) + replacement + str.substr(index + replacement.length);
+}
 
-
-
+var sentence = "";
+var inputhtml = document.getElementById('#fpf_4694954');
     
 
  var url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
@@ -46,7 +63,7 @@ var dict = {
 
 
  window.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector('.woocommerce-input-wrapper').addEventListener('change', function() {
+    document.querySelector('.woocommerce-input-wrapper').addEventListener('input', function() {
     var xhr = new XMLHttpRequest(),
     textAPI = document.querySelector('.input-text.fpf-input-field').value;
         langAPI = "ur",
@@ -61,13 +78,38 @@ var dict = {
             console.log(res);
             var json = JSON.parse(res);
             console.log(json);
-            if(json.code == 200) {
-                document.querySelector('.input-text.fpf-input-field').value = json.text[0];
+        if(json.code == 200) {
+
+
+                // for(var key in dict) {
+              
+                // if(textAPI.substr(-1) === key)
+                // {
+                    console.log(textAPI.substr(-1));
+                   // console.log(key);
+                    document.querySelector('.input-text.fpf-input-field').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
+            //    sentence = document.querySelector('.input-text.fpf-input-field').value;
+            //    //sentence = "";
+            //     sentence = sentence + dict[key];
+            //     document.querySelector('.input-text.fpf-input-field').value = sentence;
+               
+            // }
+           
+    
+           
+                
+             
+                // }
+
+                 //document.querySelector('.input-text.fpf-input-field').value = document.querySelector('.input-text.fpf-input-field').value + dict[key];
+            
+                // document.querySelector('.input-text.fpf-input-field').value = json.text[0];
                // setTimeout(function(){ console.log('wait');}, 1000); event = input
                 // if(textAPI == "Zoraiz")
                 // {
                 //     document.querySelector('.input-text.fpf-input-field').value = "زوریز";
                 // }
+                
             }
             else {
                 document.querySelector('.input-text.fpf-input-field').value = "Error Code: " + json.code;
@@ -77,7 +119,25 @@ var dict = {
 }, false);
 });
 
- 
+// function del(event) {        inputhtml.onkeydown = function() {
+//     var backspacedel = event.keyCode || event.charCode;
+
+//     if( backspacedel == 8 || backspacedel == 46 )
+//         {
+//             textAPI.substr(-1) = '';
+//             return false;
+//         }    
+        
+// };}
+
+// inputhtml.addEventListener("input", function() {
+
+//     sentence = document.querySelector('.input-text.fpf-input-field').value;
+
+
+// });
+
+
 </script>
 
 
