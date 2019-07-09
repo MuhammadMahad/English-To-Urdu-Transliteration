@@ -1,0 +1,84 @@
+<script type="text/javascript">
+
+var dict = {
+  'q': 'ق',
+  'w':'و',
+  'e':'ع',
+  'r':'ر',
+  't': 'ت',
+  'y': 'ے',
+  'u': 'ء',
+  'i': 'ی',
+  'o': 'ہ',
+  'p': 'پ',
+  '[': '﷽',
+  ']': 'ﷲ',
+  'a': 'ا',
+  's': 'س',
+  'd': 'د',
+  'f': 'ف',
+  'g': 'گ',
+  'h': 'ح',
+  'j': 'ج',
+  'k': 'ک',
+  'i': 'ل',
+  ';': '؛',
+  'z': 'ز',
+  'x': 'ش',
+  'c': 'چ',
+  'v': 'ط',
+  'b': 'ب',
+  'n': 'ن',
+  'm': 'م',
+  ',': '،',
+  '.': '۔',
+  '/': '/',
+  
+};
+
+
+
+
+    
+
+ var url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
+ keyAPI = "trnsl.1.1.20190708T102444Z.001ce7585c2cd5da.a27816b65b006916c0f6b2f3a2cc862086ead36c";
+
+
+ window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('.woocommerce-input-wrapper').addEventListener('change', function() {
+    var xhr = new XMLHttpRequest(),
+    textAPI = document.querySelector('.input-text.fpf-input-field').value;
+        langAPI = "ur",
+        data = "key="+keyAPI+"&text="+textAPI+"&lang="+langAPI;
+    xhr.open("POST",url,true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send(data);
+    xhr.onreadystatechange = function() {
+        if (this.readyState==4 && this.status==200) {
+            console.log(textAPI);
+            var res = this.responseText;
+            console.log(res);
+            var json = JSON.parse(res);
+            console.log(json);
+            if(json.code == 200) {
+                document.querySelector('.input-text.fpf-input-field').value = json.text[0];
+               // setTimeout(function(){ console.log('wait');}, 1000); event = input
+                // if(textAPI == "Zoraiz")
+                // {
+                //     document.querySelector('.input-text.fpf-input-field').value = "زوریز";
+                // }
+            }
+            else {
+                document.querySelector('.input-text.fpf-input-field').value = "Error Code: " + json.code;
+            }
+        }
+    }
+}, false);
+});
+
+ 
+</script>
+
+
+
