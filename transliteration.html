@@ -36,6 +36,8 @@ var dict = {
   '.': '۔',
   '/': '/',
 
+
+  '`':'؏',
   '1': '۱',
   '2': '۲',
   '3': '۳',
@@ -47,6 +49,52 @@ var dict = {
   '9': '۹',
   '0': '۰',
   '-': '-',
+
+  '~': '؎',
+  '!': '!',
+  '@': '@',
+  '#': 'ؔ',
+  '$':'ؒ',
+  '%':'٪',
+  '^':'ؓ',
+  '&':'ؑ',
+  '*':'ؐ',
+  '(':'(',
+  ')':')',
+  'Q':'ْ',
+  'W':'ٔ',
+  'E':'ٰ',
+  'R':'ڑ',
+  'T':'ٹ',
+  'Y': 'َ',
+  'U':'ئ', 
+  'I':'ِ',
+  'O':'ۃ',
+  'P':'ُ',
+  '{':'ﷺ',
+  '}':'ﷻ',
+  'A': 'آ',
+  'S': 'ص',
+  'D': 'ڈ',
+  'F':'أ',
+  'G':'غ',
+  'H':'ھ',
+  'J':'ض',
+  'K':'خ',
+  'L':'ٖ',
+  ':': ':',
+  'Z':'ذ',
+  'X':'ژ',
+  'C':'ث',
+  'V':'ظ',
+  'B':'ً',
+  'N':'ں',
+  'M':'ّ',
+  '<':'ٗ',
+  '>':'.',
+  '?':'؟'
+  
+
   
 };
 
@@ -62,72 +110,16 @@ function replaceAt(str, index, replacement) {
     document.querySelector('.woocommerce-input-wrapper').addEventListener('input', function() {
     
     textAPI = document.querySelector('.input-text.fpf-input-field').value;
-        
-   
-        
-          
-           
-       
-
-
-                // for(var key in dict) {
-              
-                // if(textAPI.substr(-1) === key)
-                // {
-
-                    // for (i = 0; i < textAPI.length - 1; i++)
-                    // {
-                    //     console.log(textAPI.substr(i,i+1));
-                    //     document.querySelector('.input-text.fpf-input-field').value = replaceAt(textAPI,i, dict[textAPI.substr(i,i+1)]);
-                    // }
-                    // console.log(textAPI.substr(-1));
-                   // console.log(key);
+      
                     document.querySelector('.input-text.fpf-input-field').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
-            //    sentence = document.querySelector('.input-text.fpf-input-field').value;
-            //    //sentence = "";
-            //     sentence = sentence + dict[key];
-            //     document.querySelector('.input-text.fpf-input-field').value = sentence;
-               
-            // }
-           
-    
-           
-                
-             
-                // }
-
-                 //document.querySelector('.input-text.fpf-input-field').value = document.querySelector('.input-text.fpf-input-field').value + dict[key];
-            
-                // document.querySelector('.input-text.fpf-input-field').value = json.text[0];
-               // setTimeout(function(){ console.log('wait');}, 1000); event = input
-                // if(textAPI == "Zoraiz")
-                // {
-                //     document.querySelector('.input-text.fpf-input-field').value = "زوریز";
-                // }
-                
+         
            
         
     
 }, false);
 });
 
-// function del(event) {        inputhtml.onkeydown = function() {
-//     var backspacedel = event.keyCode || event.charCode;
 
-//     if( backspacedel == 8 || backspacedel == 46 )
-//         {
-//             textAPI.substr(-1) = '';
-//             return false;
-//         }    
-        
-// };}
-
-// inputhtml.addEventListener("input", function() {
-
-//     sentence = document.querySelector('.input-text.fpf-input-field').value;
-
-
-// });
 
 
 </script>
