@@ -85,7 +85,13 @@ var inputhtml = document.getElementById('#fpf_4694954');
               
                 // if(textAPI.substr(-1) === key)
                 // {
-                    console.log(textAPI.substr(-1));
+
+                    // for (i = 0; i < textAPI.length - 1; i++)
+                    // {
+                    //     console.log(textAPI.substr(i,i+1));
+                    //     document.querySelector('.input-text.fpf-input-field').value = replaceAt(textAPI,i, dict[textAPI.substr(i,i+1)]);
+                    // }
+                    // console.log(textAPI.substr(-1));
                    // console.log(key);
                     document.querySelector('.input-text.fpf-input-field').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
             //    sentence = document.querySelector('.input-text.fpf-input-field').value;
