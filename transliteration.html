@@ -54,31 +54,20 @@ function replaceAt(str, index, replacement) {
     return str.substr(0, index) + replacement + str.substr(index + replacement.length);
 }
 
-var sentence = "";
-var inputhtml = document.getElementById('#fpf_4694954');
+
     
 
- var url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
- keyAPI = "trnsl.1.1.20190708T102444Z.001ce7585c2cd5da.a27816b65b006916c0f6b2f3a2cc862086ead36c";
-
-
+ 
  window.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('.woocommerce-input-wrapper').addEventListener('input', function() {
-    var xhr = new XMLHttpRequest(),
+    
     textAPI = document.querySelector('.input-text.fpf-input-field').value;
-        langAPI = "ur",
-        data = "key="+keyAPI+"&text="+textAPI+"&lang="+langAPI;
-    xhr.open("POST",url,true);
-    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xhr.send(data);
-    xhr.onreadystatechange = function() {
-        if (this.readyState==4 && this.status==200) {
-            console.log(textAPI);
-            var res = this.responseText;
-            console.log(res);
-            var json = JSON.parse(res);
-            console.log(json);
-        if(json.code == 200) {
+        
+   
+        
+          
+           
+       
 
 
                 // for(var key in dict) {
@@ -116,12 +105,9 @@ var inputhtml = document.getElementById('#fpf_4694954');
                 //     document.querySelector('.input-text.fpf-input-field').value = "زوریز";
                 // }
                 
-            }
-            else {
-                document.querySelector('.input-text.fpf-input-field').value = "Error Code: " + json.code;
-            }
-        }
-    }
+           
+        
+    
 }, false);
 });
 
