@@ -111,34 +111,15 @@ function toggleImg() {
 
   return newImg;
 }
+
+window.onload = function(event){
     
-
- 
-//  window.addEventListener('DOMContentLoaded', (event) => {
-//     document.querySelector('.woocommerce-input-wrapper').addEventListener('input', function() {
-    
-//     textAPI = document.querySelector('#fpf_4694954').value;
-      
-//                     document.querySelector('#fpf_4694954').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
-         
-                   
-                    
-//      textAPI2 = document.querySelector('#fpf_4419547').value;
-      
-//       document.querySelector('#fpf_4419547').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
+if(document.getElementById('fpf_4918715_u').checked) {
+  //Urdu radio button is checked
 
 
 
-
-    
-// }, false);
-
-
-
-// });
-
-
-window.addEventListener('DOMContentLoaded', (event) => {
+  window.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('#fpf_4694954').addEventListener('input', function() {
     
     var textAPI = document.querySelector('#fpf_4694954').value;
@@ -169,7 +150,7 @@ document.querySelector('#fpf_4419547').value = replaceAt(textAPI2,textAPI2.lengt
 // });
 
 
- window.onload = function(event){
+ 
 
  
   
@@ -259,8 +240,57 @@ for (u = 0; u < y.length; u++) {
 
 
 
- };
+ 
 
+
+
+
+
+}else if(document.getElementById('fpf_4918715_e').checked) {
+  //English radio button is checked
+
+  var x = document.getElementsByClassName('kblayout');
+
+  for(var i = 0; i < x.length; i++)
+  {
+    x[i].style.display = "none";
+  }
+  
+
+
+
+
+}
+ 
+
+
+
+}
+
+
+
+//  window.addEventListener('DOMContentLoaded', (event) => {
+//     document.querySelector('.woocommerce-input-wrapper').addEventListener('input', function() {
+    
+//     textAPI = document.querySelector('#fpf_4694954').value;
+      
+//                     document.querySelector('#fpf_4694954').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
+         
+                   
+                    
+//      textAPI2 = document.querySelector('#fpf_4419547').value;
+      
+//       document.querySelector('#fpf_4419547').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
+
+
+
+
+    
+// }, false);
+
+
+
+// });
 
 
 
