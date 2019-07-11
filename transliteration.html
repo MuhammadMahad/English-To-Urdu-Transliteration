@@ -114,101 +114,146 @@ function toggleImg() {
     
 
  
- window.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector('.woocommerce-input-wrapper').addEventListener('input', function() {
+//  window.addEventListener('DOMContentLoaded', (event) => {
+//     document.querySelector('.woocommerce-input-wrapper').addEventListener('input', function() {
     
-    textAPI = document.querySelector('.input-text.fpf-input-field').value;
+//     textAPI = document.querySelector('#fpf_4694954').value;
       
-                    document.querySelector('.input-text.fpf-input-field').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
+//                     document.querySelector('#fpf_4694954').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
          
                    
                     
-  
+//      textAPI2 = document.querySelector('#fpf_4419547').value;
+      
+//       document.querySelector('#fpf_4419547').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
 
 
 
 
     
+// }, false);
+
+
+
+// });
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('#fpf_4694954').addEventListener('input', function() {
+    
+    var textAPI = document.querySelector('#fpf_4694954').value;
+      
+                    document.querySelector('#fpf_4694954').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
+         
+    }   , false);
+                    
+    
+    document.querySelector('#fpf_4419547').addEventListener('input', function() {
+
+var textAPI2 = document.querySelector('#fpf_4419547').value;
+
+document.querySelector('#fpf_4419547').value = replaceAt(textAPI2,textAPI2.length - 1, dict[textAPI2.substr(-1)]);
+
 }, false);
+     
 
 
 
 });
 
+
+// window.addEventListener('DOMContentLoaded', (event) => {
+
+  
+
+// });
+
+
  window.onload = function(event){
 
-  var t = document.getElementsByClassName("kblayout");           
+ 
   
-console.log(t);
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    var t = document.getElementsByClassName("kblayout");           
+  
+  console.log(t);
+    
+    
+    var q = t[0];
+  
+      q.onclick = function(){
+        if(q.src === "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png")
+      {
+        q.src = "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
+      }
+      else if(q.src === "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png")
+      {
+        q.src = "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
+      }
+      };
+  
+      var p = t[1];
+  
+      p.onclick = function(){
+        if(p.src === "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png")
+      {
+        p.src = "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
+      }
+      else if(p.src === "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png")
+      {
+        p.src = "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
+      }
+      };
   
   
-  var q = t[0];
+    
+  
+  
+  
+}
+else
+{
+  document.addEventListener('keydown',function(event){
 
-    q.onclick = function(){
-      if(q.src === "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png")
-    {
-      q.src = "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
-    }
-    else if(q.src === "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png")
-    {
-      q.src = "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
-    }
-    };
+if(event.shiftKey)
+{
+    var x = document.getElementsByClassName("kblayout");           
+  var i;
+for (i = 0; i < x.length; i++) {
+  x[i].src="https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
+}
 
-    var p = t[1];
 
-    p.onclick = function(){
-      if(p.src === "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png")
-    {
-      p.src = "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
-    }
-    else if(p.src === "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png")
-    {
-      p.src = "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
-    }
-    };
+
+
+
+}
+
+
+
+  });
+  
+  document.addEventListener('keyup',function(event){
+
+if(!event.shiftKey)
+{
+
+  console.log('yo');
+    var y = document.getElementsByClassName("kblayout");           
+  var u;
+for (u = 0; u < y.length; u++) {
+  y[u].src="https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
+}
+}
+
+
+
+  });
+}
 
 
   
 
-
-
-//   document.addEventListener('keydown',function(event){
-
-// if(event.shiftKey)
-// {
-//     var x = document.getElementsByClassName("kblayout");           
-//   var i;
-// for (i = 0; i < x.length; i++) {
-//   x[i].src="https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
-// }
-
-
-
-
-
-// }
-
-
-
-//   });
-  
-//   document.addEventListener('keyup',function(event){
-
-// if(!event.shiftKey)
-// {
-
-//   console.log('yo');
-//     var y = document.getElementsByClassName("kblayout");           
-//   var u;
-// for (u = 0; u < y.length; u++) {
-//   y[u].src="https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
-// }
-// }
-
-
-
-//   });
 
   
 
@@ -216,8 +261,11 @@ console.log(t);
 
  };
 
+
+
+
 //  window.onload = function(event){
- 
+  
 //    }
    
 
