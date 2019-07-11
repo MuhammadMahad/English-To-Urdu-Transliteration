@@ -102,7 +102,15 @@ function replaceAt(str, index, replacement) {
     return str.substr(0, index) + replacement + str.substr(index + replacement.length);
 }
 
+function toggleImg() {
+  let initialImg = "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
+  let srcTest = initialImg.includes('initial/img/url');
+  let newImg = {
+    'true':'second/img/url', 
+    'false':'initial/img/url'}[srcTest];
 
+  return newImg;
+}
     
 
  
@@ -113,13 +121,133 @@ function replaceAt(str, index, replacement) {
       
                     document.querySelector('.input-text.fpf-input-field').value = replaceAt(textAPI,textAPI.length - 1, dict[textAPI.substr(-1)]);
          
-           
-        
+                   
+                    
+  
+
+
+
+
     
 }, false);
+
+
+
 });
 
+ window.onload = function(event){
 
+  var t = document.getElementsByClassName("kblayout");           
+  
+console.log(t);
+  
+  
+  var q = t[0];
+
+    q.onclick = function(){
+      if(q.src === "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png")
+    {
+      q.src = "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
+    }
+    else if(q.src === "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png")
+    {
+      q.src = "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
+    }
+    };
+
+    var p = t[1];
+
+    p.onclick = function(){
+      if(p.src === "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png")
+    {
+      p.src = "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
+    }
+    else if(p.src === "https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png")
+    {
+      p.src = "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
+    }
+    };
+
+
+  
+
+
+
+//   document.addEventListener('keydown',function(event){
+
+// if(event.shiftKey)
+// {
+//     var x = document.getElementsByClassName("kblayout");           
+//   var i;
+// for (i = 0; i < x.length; i++) {
+//   x[i].src="https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
+// }
+
+
+
+
+
+// }
+
+
+
+//   });
+  
+//   document.addEventListener('keyup',function(event){
+
+// if(!event.shiftKey)
+// {
+
+//   console.log('yo');
+//     var y = document.getElementsByClassName("kblayout");           
+//   var u;
+// for (u = 0; u < y.length; u++) {
+//   y[u].src="https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
+// }
+// }
+
+
+
+//   });
+
+  
+
+
+
+ };
+
+//  window.onload = function(event){
+ 
+//    }
+   
+
+// document.querySelector('.woocommerce-input-wrapper').onkeydown = function(event){if(event.shiftKey)
+// {
+//   console.log('yo');
+//   var x = document.getElementsByClassName("kblayout");           
+//   var i;
+// for (i = 0; i < x.length; i++) {
+//   x[i].src="https://litstorybooks.com/wp-content/uploads/2019/07/Keyboard.png";
+// }
+
+// document.querySelector('.woocommerce-input-wrapper').onkeydown = function(event)
+// {
+//   if(event.shiftKey)
+//   { var x = document.getElementsByClassName("kblayout");           
+//   var i;
+// for (i = 0; i < x.length; i++) {
+//   x[i].src="https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";}
+ 
+// }
+// }
+
+
+
+// }
+
+
+
+// ;}
 
 
 </script>
