@@ -18,6 +18,8 @@
     }
   }
 
+  
+
   function toggleImg() {
     let initialImg = "https://litstorybooks.com/wp-content/uploads/2019/07/KeyboardNoShift.png";
     let srcTest = initialImg.includes('initial/img/url');
@@ -33,14 +35,25 @@
     console.log(inputID);
     textAPI = document.querySelector(inputID).value;
     console.log(textAPI);
-        document.querySelector(inputID).value = replaceAt(textAPI, textAPI.length - 1, dict[textAPI.substr(-1)]);
+    document.querySelector(inputID).value = replaceAt(textAPI, textAPI.length - 1, dict[textAPI.substr(-1)]);
 
   }
 
   window.addEventListener('DOMContentLoaded', (event) => {
 
+    var text1 = function()
+    {
+      var textAPI = document.querySelector('#fpf_4694954').value;
 
-    
+        document.querySelector('#fpf_4694954').value = replaceAt(textAPI, textAPI.length - 1, dict[textAPI.substr(-1)]);
+
+    };
+
+    var text2 = function () {
+        var textAPI2 = document.querySelector('#fpf_4419547').value;
+        document.querySelector('#fpf_4419547').value = replaceAt(textAPI2, textAPI2.length - 1, dict[textAPI2.substr(-1)]);
+      };
+
     document.getElementById('fpf_4918715_u').addEventListener('click', function () {
 
       var x = document.getElementsByClassName("kblayout");
@@ -50,11 +63,10 @@
 
 
 
-      document.querySelector('#fpf_4694954').addEventListener('input', enToUr('#fpf_4694954')
-        , false);
-      document.querySelector('#fpf_4419547').addEventListener('input', enToUr('#fpf_4419547')
-      
-        , false);
+      document.querySelector('#fpf_4694954').addEventListener('input', text1, false);
+
+
+      document.querySelector('#fpf_4419547').addEventListener('input', text2, false);
 
 
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -118,11 +130,11 @@
         x[i].style.display = "none";
       }
 
-      document.querySelector('#fpf_4694954').removeEventListener('input', enToUr('#fpf_4694954')
+      document.querySelector('#fpf_4694954').removeEventListener('input', text1
         , false);
-      document.querySelector('#fpf_4419547').removeEventListener('input', enToUr('#fpf_4419547')
-      
-      , false);
+      document.querySelector('#fpf_4419547').removeEventListener('input', text2
+
+        , false);
     });
 
 
